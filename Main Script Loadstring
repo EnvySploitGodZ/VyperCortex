@@ -1,0 +1,33 @@
+-- VyperCortex
+local Library =
+loadstring(game:HttpGet('https://pastebin.com/raw/GbZynD8N'))()
+local n00ber = Library.Category("VyperCortex","v1",Color3.fromRGB(0,204,204))
+local Main = Library.Category("Kombat","v1",Color3.fromRGB(0,204,204))
+
+Main:Section("Kombat")
+Main:Button("lock",function()
+end)
+Main:Section("Player")
+Main:Button("Sit",function()
+    game.Players.LocalPlayer.Character.Humanoid.Sit = true
+end)
+Main:Toggle("Noclip",function(State)
+    if State == true then
+        game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
+    else
+        game.Players.LocalPlayer.Character.Humanoid:ChangeState(18)
+    end
+end)
+Main:Slider("Speed",16,200,true,function(numbers)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = numbers
+end)
+Main:Box("print","text",function(text) 
+    print(text)
+end)
+Main:Dropdown("Printer",{"A","B","C"},function(update)
+    print(update)
+end)
+Main:Section("Ui Customization")
+Main:ColorPick("Color",function(color) 
+       print(color) 
+end)
